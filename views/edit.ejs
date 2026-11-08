@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar <%= starwar.name %></title>
+    <link rel="stylesheet" href="/portada.css">
+</head>
+<body>
+    <p><a href="/starwars/<%= encodeURIComponent(starwar.name) %>">Cancelar</a></p>
+
+    <h1>Editar a <%= starwar.name %></h1>
+
+    <form action="/starwars/<%= encodeURIComponent(starwar.name) %>?_method=PATCH" method="POST">
+        <div>
+            <label>Altura:</label>
+            <input type="text" name="height" value="<%= starwar.height %>">
+        </div>
+        <br>
+        <div>
+            <label>Peso:</label>
+            <input type="text" name="mass" value="<%= starwar.mass %>">
+        </div>
+        <br>
+        <button type="submit">Actualizar</button>
+    </form>
+</body>
+</html>

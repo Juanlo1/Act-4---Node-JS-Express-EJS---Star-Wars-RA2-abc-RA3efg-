@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Star Wars</title>
+    <link rel="stylesheet" href="/portada.css">
+</head>
+<body>
+    <p><a href="/">Volver al buscador</a></p>
+    <h1>Personajes de Star Wars</h1>
+
+    <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center;">
+        <% for(let p of starwars) { %>
+            <div>
+                <a href="/starwars/<%= encodeURIComponent(p.name) %>">
+                    <img src="<%= p.photo %>" alt="<%= p.name %>" width="180" height="230" style="object-fit: cover;">
+                </a>
+                <p><%= p.name %></p>
+            </div>
+        <% } %>
+    </div>
+</body>
+</html>
